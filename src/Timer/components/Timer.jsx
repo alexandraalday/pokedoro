@@ -1,23 +1,22 @@
 import React from 'react';
 import TimerHeader from '../../TimerHeader/components/TimerHeader';
+import TimerDisplay from '../../TimerDisplay/components/TimerDisplay';
 
 
 const Timer = () => (
 	<div className="container-fluid">
 		<TimerHeader />
+		<TimerDisplay />
 		<div className="row">
-		  	<h2 className="text-center">00:00:00</h2>
+	  		<button className="btn btn-success center-block">Start</button>
 		</div>
 		<div className="row">
-		  	<button className="btn btn-success center-block">Start</button>
-		</div>
-		<div className="row">
-		  	<h2 className="text-primary">Set Timer</h2>
-		  	<div className="row control-row">
-		    	<div className="form-group">
-		      		<div className="col-sm-3">
-		        		<label htmlFor="hours">Hours</label>
-		     		</div>
+	  		<h2 className="text-primary">Set Timer</h2>
+	  		<div className="row control-row">
+	    		<div className="form-group">
+	      			<div className="col-sm-3">
+	        			<label htmlFor="hours">Hours</label>
+	     			</div>
 		      		<div className="col-sm-9">
 		        		<input id="hours" className="form-control" type="number" />
 		      		</div>
