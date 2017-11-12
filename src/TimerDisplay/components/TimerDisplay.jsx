@@ -1,8 +1,8 @@
 import React from 'react';
 
-const TimerDisplay = () => (
+const TimerDisplay = (props) => (
 	<div className="row">
-	  	<h2 className="text-center">00:00:00</h2>
+	  	<h2 className="text-center"> {'${props.currentTime.get('hours')}:${props.currentTime.get('minutes')}:${props.currentTime.get('seconds')}'} </h2>
 	</div>
 );
 
