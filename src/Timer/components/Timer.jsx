@@ -22,7 +22,9 @@ class Timer extends Component {
 				<TimerHeader />
 				<TimerDisplay currentTime={this.state.currentTime} />
 				<TimerButton />
-				<TimerConfig />
+				<TimerConfig 
+					baseTime = {this.state.baseTime}
+				/>
 			</div>
 		);
 	}
