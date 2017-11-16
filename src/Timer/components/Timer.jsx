@@ -20,6 +20,7 @@ class Timer extends Component {
 
 		this.setBaseTime = this.setBaseTime.bind(this);
 		this.startTimer = this.startTimer.bind(this);
+		this.stopTimer = this.stopTimer.bind(this);
 		this.reduceTimer = this.reduceTimer.bind(this);
 	}
 
@@ -37,6 +38,17 @@ class Timer extends Component {
 		});
 	}
 
+	stopTimer() {
+		if (this.state.timer) {
+			clearInterval(this.state.timer);
+		}
+		this.setState({
+			timerState: timerStates.NOT_SET,
+			timer: null,
+			currentTime: moment.duration(this.state.baseTime),
+		});
+	}
+
 	reduceTimer() {
 		const newTime = moment.duration(this.state.currentTime);
 		newTime.subtract(1, 'second');
@@ -51,7 +63,11 @@ class Timer extends Component {
 			<div className="container-fluid">
 				<TimerHeader />
 				<TimerDisplay currentTime={this.state.currentTime} />
-				<TimerButton startTimer={this.startTimer}/>
+				<TimerButton 
+					startTimer={this.startTimer} 
+					timerState={this.state.timerState} 
+					stopTimer={this.stopTimer}
+				/>
 				{
 					(this.state.timerState !== timerStates.RUNNING)
 					&&
