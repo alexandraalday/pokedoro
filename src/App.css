@@ -1,12 +1,14 @@
 body {
   background-color: #317373;
+  background-image: url("https://img00.deviantart.net/d814/i/2017/028/0/f/squirtle_charmander_bulbasaur__pokemon__by_greenmapple17-d82mz5w.png");
+  background-size: cover;
 }
 
 .app-content {
   width: 600px;
   margin-top: 100px;
   padding: 40px;
-  background-color: #62d5b4; 
+  background-color: #96CCB8; 
   border-color: #ac0031; 
   color: #fff;
 }
